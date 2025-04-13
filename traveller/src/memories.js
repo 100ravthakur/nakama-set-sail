@@ -100,13 +100,8 @@ useEffect(()=>{
          <div className="gallery-grid">
         {images.length === 0 ? "Please add Images" :
           (images.map((img, idx) => (
-            <img
-            key={idx}
-            src={`https://nakama-set-sail.onrender.com${img}`}
-            alt={`Gallery ${idx}`}
-            className="gallery-img"
-              
-            />
+            <img src={img} alt="Memory" />
+
           ))) 
           
 }
