@@ -1,0 +1,21 @@
+{
+  "name": "travelling",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ 
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "scripts": {
+     "test": "echo \"Error: no test specified\" && exit 1",
+  "client": "cd traveller && npm start",
+  "server": "cd backend && nodemon index.js",
+  "dev": "concurrently \"npm run server\" \"npm run traveller\""
+}
+
+}

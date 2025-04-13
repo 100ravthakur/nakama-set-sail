@@ -1,0 +1,247 @@
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .middle-row {
+    grid-template-columns: auto auto auto auto;
+  }
+  .travel-con {
+    width: 100% !important;
+  }
+  .travel-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    flex-wrap: wrap;
+  }
+  .travel-con.tmap {
+    width: 47%;
+  }
+  .display-1-trip {
+    font-size: 2rem !important;
+  }
+
+  .travel-con.about {
+    padding: 30px 30px 30px 30px !important;
+  }
+  .right-report {
+    display: flex !important;
+    gap: 15px !important;
+  }
+  .left-report {
+    display: flex !important;
+    gap: 15px !important;
+  }
+  .journey-right img {
+    position: relative !important;
+    top: -3px !important;
+  }
+  .Weather-information {
+    margin-top: 20px !important;
+  }
+
+  .con-memo {
+    gap: 30px;
+    flex-direction: column;
+  }
+
+  .memo-one.memo {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+  }
+  .memo img {
+    width: 230px;
+  }
+  .memo-two.memo {
+    grid-template-columns: auto auto !important;
+  }
+  .memo-three.memo {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .travel-row {
+    display: flex;
+    gap: 35px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .row-one {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .row-two.journey {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  .trip-add {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .middle-row {
+    grid-template-columns: auto;
+    justify-content: center;
+  }
+  .trip-memory {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .con-memo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    flex-wrap: wrap;
+  }
+  .memo-three.memo {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto;
+  }
+  .memo-one.memo {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+  footer {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff4500;
+    flex-wrap: wrap;
+  }
+  .travel-con {
+    max-height: fit-content !important;
+  }
+  .travel-con.about {
+    width: 100% !important;
+  }
+  .travel-con.tmap {
+    width: 100% !important;
+  }
+  .travel-con.status {
+    width: 100% !important;
+    padding: 10px !important;
+  }
+  iframe {
+    height: 300px;
+    width: 280px;
+  }
+  a.navbar-brand {
+    font-size: 20px;
+  }
+  
+  .quote-t {
+    padding: 10px !important;
+    margin-bottom: 20px;
+  }
+  .Weather-information {
+    margin-top: 20px !important;
+  }
+  .memo-two.memo {
+    gap: 0px;
+    margin: 20px 0;
+  }
+  .weather-info {
+    flex-direction: column;
+    gap: 0px !important;
+  }
+  .journey-right img {
+    margin-right: 15px !important;
+  }
+  .middle img {
+    width: 250px !important;
+  }
+  .row-card img {
+    width: 200px !important;
+  }
+  .foot-three.foot {
+    right: 5%;
+
+    bottom: 28px;
+  }
+  .travelling {
+    margin-left: 0px;
+    margin: 15px;
+  }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 2fr)) !important;
+    gap: 1rem;
+  }
+  .gallery-img {
+    height: 90px !important;
+  }
+  .travelling {
+    display: none !important;
+  }
+  .plan {
+    display: none !important;
+  }
+  .display-1-trip {
+    font-size: 2rem !important;
+  }
+  .trip-add button.add-journey {
+    padding: 5px 5px;
+  }
+  .trip-memory button.add-journey {
+    padding: 5px 5px;
+  }
+  .popup-memo {
+    position: fixed;
+    left: 5%;
+    top: 40%;
+    width: 90%;
+    z-index: 9999;
+    border-radius: 5px;
+  }
+  .popup-memo form {
+    gap: 30;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .trip-memory button.add-journey:hover {
+    padding: 5px 5px !important;
+  }
+  .trip-form {
+    width: 97% !important;
+  }
+  .foot-three.foot {
+    display: none !important;
+  }
+  .navbar-toggler:focus {
+    text-decoration: none;
+    outline: 0 !important;
+    box-shadow: none !important;
+  }
+  .trip-form button {
+    width: 50% !important;
+  }
+  .trip-add button.add-journey:hover {
+    padding: 5px 5px !important;
+  }
+  a.navbar-brand {
+    color: white !important;
+    font-size: 23px !important;
+  }
+  .foot-two.foot p {
+    font-size: 12px;
+  }
+  .foot-one.foot p {
+    font-size: 12px;
+  }
+  .header-banner {
+ 
+    background-size: cover !important;
+    
+}
+}
