@@ -33,7 +33,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/trips", authenticateToken, tripRoutes);
 app.use("/api/gallery", authenticateToken, galleryRoutes);
 app.use("/api",authenticateToken, profileRoute);
-app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("/public/uploads"));
 
 
 app.get("/api/hello", (req, res) => {
