@@ -3,9 +3,9 @@ const router = express.Router();
 const Gallery = require("../models/gallery");
 const upload = require("../middleware/gallery");
 const authenticateToken = require("../middleware/users");
-const upload = require("../middleware/cloudinary");
+const CloudinaryUpload = require("../middleware/cloudinary");
 
-router.post("/",authenticateToken, upload.array("images", 12), async (req, res) => {
+router.post("/",authenticateToken, CloudinaryUpload.array("images", 12), async (req, res) => {
   try {
     const imagePaths = req.files.map((file) => `/uploads/gallery/${file.filename}`);
 
