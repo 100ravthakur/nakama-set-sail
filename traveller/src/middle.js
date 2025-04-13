@@ -17,7 +17,7 @@ function Middle() {
   const fetchTrip = async () => {
     try {
       const token = localStorage.getItem("token");
-      const tripData = "http://localhost:5000/api/trips";
+      const tripData = "https://nakama-set-sail.onrender.com/api/trips";
       const res = await fetch(tripData, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ function Middle() {
     }
 
     try {
-      const url = `http://localhost:5000/api/trips/${id}`;
+      const url = `https://nakama-set-sail.onrender.com/api/trips/${id}`;
 
       const res = await fetch(url, {
         method: "DELETE",
@@ -69,8 +69,8 @@ function Middle() {
       }
 
       const url = isEditing
-        ? `http://localhost:5000/api/trips/${editingTripId}`
-        : "http://localhost:5000/api/trips";
+        ? `https://nakama-set-sail.onrender.com/api/trips/${editingTripId}`
+        : "https://nakama-set-sail.onrender.com/api/trips";
 
       const method = isEditing ? "PUT" : "POST";
       const res = await fetch(url, {
@@ -186,7 +186,7 @@ function Middle() {
                 <img
                   src={
                     trip.imageUrl
-                      ? `http://localhost:5000${trip.imageUrl}`
+                      ? `https://nakama-set-sail.onrender.com/${trip.imageUrl}`
                       : ind
                   }
                   alt={trip.title}

@@ -67,6 +67,9 @@
     flex-wrap: wrap;
     flex-direction: column;
   }
+  .gallery-grid {
+    text-align: center;
+}
   .row-one {
     display: flex;
     gap: 30px;

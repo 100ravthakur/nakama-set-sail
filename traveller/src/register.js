@@ -11,7 +11,7 @@ function Register() {
     e.preventDefault();
 
     try {
-        const url = "http://localhost:5000/api/auth/register";
+        const url = "https://nakama-set-sail.onrender.com/api/auth/register";
       const res =await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

@@ -14,7 +14,7 @@ function Profile() {
   const fetchProfile = async () => {
     try {
         const token = localStorage.getItem("token");
-        const res = await fetch("http://localhost:5000/api/profile", {
+        const res = await fetch("https://nakama-set-sail.onrender.com/api/profile", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

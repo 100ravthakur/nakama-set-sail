@@ -11,7 +11,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const url = "http://localhost:5000/api/auth/login";
+      const url = "https://nakama-set-sail.onrender.com/api/auth/login";
       const res =await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

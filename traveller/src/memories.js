@@ -11,7 +11,7 @@ function Memory() {
   const fetchGallery = async () => {
     try {
       
-      const res = await fetch("http://localhost:5000/api/gallery", { headers: {
+      const res = await fetch("https://nakama-set-sail.onrender.com/api/gallery", { headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },});
       const data = await res.json();
@@ -51,7 +51,7 @@ const handleUpload = async (e) => {
 
   try {
     
-    const url = "http://localhost:5000/api/gallery";
+    const url = "https://nakama-set-sail.onrender.com/api/gallery";
     const res = await fetch(url,{
       method: "POST", headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -102,7 +102,7 @@ useEffect(()=>{
           (images.map((img, idx) => (
             <img
             key={idx}
-            src={`http://localhost:5000${img}`}
+            src={`https://nakama-set-sail.onrender.com${img}`}
             alt={`Gallery ${idx}`}
             className="gallery-img"
               
