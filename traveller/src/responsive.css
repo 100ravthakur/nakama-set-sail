@@ -247,4 +247,32 @@
     background-size: cover !important;
     
 }
+.profile-data {
+  height: 100vh;
+  /* width: 100%; */
+  padding: 30px;
+}
+.profile-card {
+  padding: 20px !important;
+  width: 315px !important;
+  background: #000000a1;
+  margin-left: auto; 
+  margin-right: auto; 
+  position: relative;
+  top: 15%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-con {
+  padding: 20px !important;
+  width: 315px !important;
+  background: #000000a1;
+  margin-left: auto; 
+  margin-right: auto; 
+  position: relative;
+  top: 15%;
+  border-radius: 10px;
+  text-align: center;
+}
 }

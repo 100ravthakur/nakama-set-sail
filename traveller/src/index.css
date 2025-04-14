@@ -493,11 +493,21 @@ form {
 .middle p {
   margin-bottom: 10px;
 }
+p.date-now {
+  position: absolute;
+  top: 136px;
+  left: 16px;
+  border-radius: 0 5px 0 0;
+  background: #0000008d;
+    padding: 0px 10px;
+    backdrop-filter: blur(0px);
+    color: #ffb347;
+}
 .middle {
   flex: 1 1 250px;
   max-width: 230px;
   min-width: 200px;
-
+position: relative;
   background-color: #fff;
   padding: 16px;
   border-radius: 8px;
@@ -524,12 +534,12 @@ svg.edit-icon {
 }
 .profile-card {
   padding: 40px;
-  width: 300px;
+  width: 500px;
   background: #000000a1;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  top: 30%;
+  top: 22%;
   border-radius: 10px;
   text-align: center;
 }
@@ -543,20 +553,41 @@ svg.edit-icon {
 .text-color {
   color: #fff;
   text-align: start;
+  padding: 10px;
+  margin-bottom: 0;
 }
 .profile-card button.add-journey {
   padding: 5px 20px;
   border: none;
+
   background: #ff4500;
   color: white;
   border-radius: 3px;
+}
+p.error {
+  color: #fff;
+}
+.profile-card .log-header {
+
+  margin-top: 20px;
 }
 img.w-8.h-8.rounded-full {
   border-radius: 50%;
   width: 40px;
 }
+svg.icon-pro {
+  position: relative;
+  margin-right: 15px;
+  color: #ffb347;
+  top: -2px;
+}
+button.navbar-toggler {
+
+  background: #ffb347;
+}
 img.profile-img {
   border-radius: 50%;
+  margin-bottom: 20px;
 }
 .login-container form {
   padding: 0px;
@@ -568,21 +599,45 @@ img.profile-img {
 }
 .login-con {
   padding: 40px;
-  width: 300px;
+  width: 400px;
   background: #000000a1;
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  top: 30%;
+  top: 20%;
   border-radius: 10px;
   text-align: center;
+}
+button, input, optgroup, select, textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 5px;
+  border-radius: 6px;
 }
 .login-container {
   height: 100vh;
 }
 .login-con h2 {
-  margin-bottom: 20px;
   color: #ff4500;
+}
+svg.back-home {
+  font-size: 35px;
+  color: #ffb347;
+}
+svg.back-home:hover {
+  font-size: 35px;
+  color: #ff4500;
+}
+.log-header h2 {
+  color: #ff4500;
+}
+.log-header {
+  display: flex
+;
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
 .login-con .add-journey:hover {
   padding: 5px 20px;

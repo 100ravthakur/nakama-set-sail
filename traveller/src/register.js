@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Register() {
@@ -8,6 +9,7 @@ function Register() {
   const [username, setUsername] = useState([]);
   const [message, setMessage] = useState([]);
   const [name, setName] = useState([]);
+  const [description, setDescription] = useState([]);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -17,10 +19,11 @@ function Register() {
       const res =await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password, username, name }),
+        body: JSON.stringify({ email, password, username, name, description }),
       });
-
+ 
       const data = await res.json();
+      console.log(data)
       if (res.ok) {
         setMessage("Registration successful! You can now login.");
         setTimeout(() => {
@@ -44,7 +47,11 @@ function Register() {
       backgroundRepeat: 'no-repeat',
     }}>
     <div className="login-con">
-    <h2>Register</h2>
+      <div className="log-header">
+         <h2>Register</h2> 
+         <a href="/"><FaHome className="back-home" /></a>
+         </div>
+    
 
 <form onSubmit={handleRegister}>
   <input
@@ -66,6 +73,13 @@ function Register() {
     placeholder="Username"
     value={username}
     onChange={(e) => setUsername(e.target.value)}
+    required
+  /><br/>
+  <input
+  type="text"
+    placeholder="Your guiding words..."
+    value={description}
+    onChange={(e) => setDescription(e.target.value)}
     required
   /><br/>
   <input

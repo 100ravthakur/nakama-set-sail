@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FaAddressCard, FaEnvelopeOpen, FaHandHoldingHeart, FaUser, FaHome, FaPen } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 function Profile() {
@@ -21,7 +22,7 @@ function Profile() {
         });
       if (res.ok) {
         const data = await res.json();
-  
+        console.log("PROFILE DATA:", data);
         setUser(data);
       } else {
         throw new Error("Failed to fetch profile");
@@ -39,7 +40,7 @@ function Profile() {
     return (
       <div className="profile">
         <div className="profile-load">
-          <p>Loading profile...</p>
+          <p>Wait For it ......</p>
         </div>
       </div>
     );
@@ -52,6 +53,7 @@ function Profile() {
       backgroundPosition: 'bottom',
       backgroundRepeat: 'no-repeat',
     }}>
+    
       <div className="profile-card">
         <img
           src={user.profileImage || "/images/profile.jpg"}
@@ -59,12 +61,14 @@ function Profile() {
           className="profile-img"
           width={70}
         />
-        <h3 className="text-color">{user.username}</h3>
-        <h3 className="text-color">{user.name}</h3>
-        <p className="text-color">{user.email}</p>
-        <p className="text-color">{user.description}</p>
-        <p className="text-color">********</p>
+        <h4 className="text-color"><FaAddressCard className="icon-pro" />{user.name}</h4>
+        <p className="text-color"><FaUser className="icon-pro" />{user.username}</p>
+        <p className="text-color"><FaEnvelopeOpen className="icon-pro" />{user.email}</p>
+        {/* <h4 className="text-color"><FaPen className="icon-pro" />{user.description}</h4> */}
+        <div className="log-header">
         <button className="add-journey" onClick={handleLogout}>Logout</button>
+         <a href="/"><FaHome className="back-home" /></a>
+         </div>
         
       </div>
     </div>

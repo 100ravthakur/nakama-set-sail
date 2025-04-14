@@ -20,8 +20,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  description: String,
-  profileImage: {
+  description: {
+    type: String,
+  },
+ 
+  imageUrl: {
     type: String,
     default: "/images/profile.jpg" 
   },

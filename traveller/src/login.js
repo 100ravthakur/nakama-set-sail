@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -39,7 +40,10 @@ function Login() {
       backgroundRepeat: 'no-repeat',
     }}>
    <div className="login-con">
-   <h2>Login</h2>
+   <div className="log-header">
+   <h2>Login</h2> 
+   <a href="/"><FaHome className="back-home" /></a>
+   </div>
     {error && <p className="error">{error}</p>}
 
     <form onSubmit={handleLogin}>

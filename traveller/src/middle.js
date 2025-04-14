@@ -210,7 +210,7 @@ function Middle() {
 
                 <h3>{trip.title}</h3>
                 <p>{trip.location}</p>
-                <p style={{ fontSize: 16 }}>
+                <p className="date-now" style={{ fontSize: 14 }}>
                   {new Date(trip.date).toLocaleDateString("en-IN", {
                     year: "numeric",
                     month: "long",
