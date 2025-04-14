@@ -9,6 +9,7 @@ function Middle() {
     title: "",
     description: "",
     date: "",
+    location: "",
   });
 
   const [isEditing, setIsEditing] = useState(false);
@@ -58,12 +59,13 @@ function Middle() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
       const formData = new FormData();
       formData.append("title", submitForm.title);
       formData.append("description", submitForm.description);
       formData.append("location", submitForm.location);
+      formData.append("date", submitForm.date);
       if (submitForm.image) {
         formData.append("image", submitForm.image);
       }
@@ -123,7 +125,12 @@ function Middle() {
               }
               setIsEditing(false);
               setShowPopup(true);
-              setSubmitForm({ title: "", description: "", location: "" });
+              setSubmitForm({
+                title: "",
+                description: "",
+                location: "",
+                date: "",
+              });
             }}
             className="add-journey"
           >
@@ -169,6 +176,15 @@ function Middle() {
               }
               required
             />
+            <input
+              type="date"
+              id="dateInput"
+              value={submitForm.date}
+              onChange={(e) =>
+                setSubmitForm({ ...submitForm, date: e.target.value })
+              }
+            
+            />
             <div className="btn-trip">
               <button type="submit">{isEditing ? "Edit" : "Create"}</button>
               <button type="button" onClick={() => setShowPopup(false)}>
@@ -186,7 +202,7 @@ function Middle() {
                 <img
                   src={
                     trip.imageUrl
-                      ? `https://nakama-set-sail.onrender.com/${trip.imageUrl}`
+                      ? `${trip.imageUrl}`
                       : ind
                   }
                   alt={trip.title}
@@ -194,36 +210,43 @@ function Middle() {
 
                 <h3>{trip.title}</h3>
                 <p>{trip.location}</p>
-                <p style={{fontSize:15}}>{trip.description}</p>
+                <p style={{ fontSize: 16 }}>
+                  {new Date(trip.date).toLocaleDateString("en-IN", {
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
+                </p>
+
+                <p style={{ fontSize: 16 }}>{trip.description}</p>
                 <div className="edit-btn">
                   <button
                     onClick={() => {
-
-                      
                       setIsEditing(true);
                       setShowPopup(true);
                       setSubmitForm({
                         title: trip.title,
                         description: trip.description,
                         location: trip.location,
+                        date: trip.date,
                       });
                       seteditingTripId(trip._id);
                     }}
                     className="add-journey"
                   >
-                    <FaEdit className="edit-icon"/>
+                    <FaEdit className="edit-icon" />
                     <span className="btn-text">Edit</span>
                   </button>
 
                   <button
                     onClick={() => {
-                      const confirmDelete = window.confirm("Are you sure you want to delete this trip?");
+                      const confirmDelete = window.confirm(
+                        "Are you sure you want to delete this trip?"
+                      );
                       if (confirmDelete) {
                         deletetrip(trip._id);
                       }
                     }}
-                    
-
                     className="add-journey"
                   >
                     Delete

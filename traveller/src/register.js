@@ -5,7 +5,9 @@ function Register() {
   const navigate = useNavigate();
   const [email, setEmail] = useState([]);
   const [password, setPassword] = useState([]);
+  const [username, setUsername] = useState([]);
   const [message, setMessage] = useState([]);
+  const [name, setName] = useState([]);
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -15,7 +17,7 @@ function Register() {
       const res =await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, username, name }),
       });
 
       const data = await res.json();
@@ -50,6 +52,20 @@ function Register() {
     placeholder="Email"
     value={email}
     onChange={(e) => setEmail(e.target.value)}
+    required
+  /><br/>
+   <input
+    type="text"
+    placeholder="Full Name"
+    value={name}
+    onChange={(e) => setName(e.target.value)}
+    required
+  /><br/>
+  <input
+    type="text"
+    placeholder="Username"
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
     required
   /><br/>
   <input

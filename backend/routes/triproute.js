@@ -1,16 +1,32 @@
 const express = require("express");
 const Trip = require("../models/trips");
 const router = express.Router();
+const imagekit = require("../utills/imagekit");
 const upload = require("../middleware/upload");
 const authenticateToken = require("../middleware/users");
 
 
 router.post("/",authenticateToken, upload.single("image"), async (req, res) => {
   try {
+
+    let imageUrl = null;
+
+    if (req.file) {
+      const uploadedImage = await imagekit.upload({
+        file: req.file.buffer,
+        fileName: req.file.originalname,
+        folder: "trip_uploads",
+      });
+
+      imageUrl = uploadedImage.url;
+    }
+
+
     const newtrip = new Trip({title: req.body.title,
         description: req.body.description,
         location: req.body.location,
-        imageUrl: req.file ? `/uploads/${req.file.filename}` : null,
+        date: new Date(req.body.date),
+        imageUrl: imageUrl,
         user: req.user.userid,
       });
     const saveTrip = await newtrip.save();
@@ -48,9 +64,16 @@ router.put('/:id', authenticateToken, upload.single("image"), async (req, res) =
             trip.title= req.body.title
             trip.location= req.body.location
             trip.description= req.body.description        
+            trip.date= new Date(req.body.date)  
         
           if (req.file) {
-            trip.imageUrl = req.file.filename;
+            const uploadedImage = await imagekit.upload({
+              file: req.file.buffer,
+              fileName: req.file.originalname,
+              folder: "trip_uploads",
+            });
+      
+            trip.imageUrl = uploadedImage.url;
           }
 
          const updatedTrip =  await trip.save();

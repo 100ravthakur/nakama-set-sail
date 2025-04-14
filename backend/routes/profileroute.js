@@ -16,6 +16,7 @@ const authenticateToken = require("../middleware/users");
           res.json({
             username: user.username,
             email: user.email,
+            name: user.name,
             profileImage: user.profileImage,
             password: "********"
           });
@@ -24,6 +25,7 @@ const authenticateToken = require("../middleware/users");
           res.status(500).json({ error: "Something went wrong." });
         }
       });
+      
       
 
 module.exports = router;

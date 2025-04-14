@@ -21,7 +21,7 @@ function Profile() {
         });
       if (res.ok) {
         const data = await res.json();
-        console.log(data);
+  
         setUser(data);
       } else {
         throw new Error("Failed to fetch profile");
@@ -59,8 +59,10 @@ function Profile() {
           className="profile-img"
           width={70}
         />
-        <h2 className="text-color">{user.username}</h2>
+        <h3 className="text-color">{user.username}</h3>
+        <h3 className="text-color">{user.name}</h3>
         <p className="text-color">{user.email}</p>
+        <p className="text-color">{user.description}</p>
         <p className="text-color">********</p>
         <button className="add-journey" onClick={handleLogout}>Logout</button>
         

@@ -6,14 +6,25 @@ const userSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  name: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  username: {
+    type: String,
+    required: true,
+    unique: true,
+  },
   password: {
     type: String,
     required: true,
   },
+  description: String,
   profileImage: {
     type: String,
     default: "/images/profile.jpg" 
-  }
+  },
 });
 
 module.exports = mongoose.model("User", userSchema);

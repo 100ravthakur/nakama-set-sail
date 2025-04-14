@@ -8,11 +8,11 @@ const authRoutes = require("../routes/userroute");
 
 router.post('/register', async (req, res) => {
    
-    const {email, password} = req.body
+    const {email, password, username, name, description} = req.body
 
     try {
         const hash =await bcrypt.hash(password, 10);
-        const user = new User({email, password:hash})
+        const user = new User({email, name, username, description, password:hash})
         await user.save()
         res.status(201).json("created")
         
@@ -22,6 +22,7 @@ router.post('/register', async (req, res) => {
     }
  
 })
+
 
 router.post('/login', async (req, res) => {
     const {email, password} = req.body
